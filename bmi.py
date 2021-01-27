@@ -9,7 +9,7 @@ ht = int(input('Please enter your height in cm:'))
 bmi = wt / ((ht/100)**2)
 
 
-#Confirmation of input of height in m and weight in kg
+#Confirmation of input of height in cm and weight in kg
 #Output BMI to two decinal places
 print('Your height is {}cm and your weight is {}kg'.format(ht, wt))
 print('Your bmi is {:.2f}'.format(bmi))
