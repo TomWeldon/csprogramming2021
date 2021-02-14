@@ -6,10 +6,10 @@ num1 = int(input('Please enter a positive integer: '))
 #else:
 print(num1, end=' ')
 while num1 > 1:
-
-    if (num1 % 2 == 0):
+       
+        if (num1 % 2 == 0):
             num1 = num1 / 2
             print(int(num1), end=' ')
-    elif(num1 % 2 ==1):
+        elif(num1 % 2 ==1):
             num1 = (num1 * 3) + 1
             print(int(num1), end=' ')
