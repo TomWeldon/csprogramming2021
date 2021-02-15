@@ -1,3 +1,8 @@
+# Weekly Task 4. Taking a positive integer and carrying out a required calculation
+#in a loop until integer 1 is reached.
+#Author: Tom Weldon G00398828
+
+
 num1 = int(input('Please enter a positive integer: '))
 
 if num1 < 1:
