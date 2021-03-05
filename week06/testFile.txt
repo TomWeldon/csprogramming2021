@@ -1,0 +1,7 @@
+https://github.com/TomWeldon/csprogramming2021
+
+https://medium.com/@sddkal/newton-square-root-method-in-python-270853e9185d
+https://www.goeduhub.com/3398/python-program-to-find-the-square-root-number-newtons-method
+
+Sqaure root week 05
+https://surajregmi.medium.com/how-to-calculate-the-square-root-of-a-number-newton-raphson-method-f8007714f64
