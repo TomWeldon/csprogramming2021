@@ -1,6 +1,8 @@
 import pandas as pd
 import re
 import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
 
 logFilename = 'access1.csv'
 
@@ -28,10 +30,33 @@ df = df.set_index(['time'])
 excelFilename = 'access.xlsx'
 df.to_excel(excelFilename, index=True, sheet_name='data')
 #summary = df['size of response'].sum()
-summary = df.groupby('session ID', as_index=False).agg({'size of response': 'sum'})
+summary = df.groupby('session ID', as_index=False).agg({'size of response': 'sum' }).head(10)
+
+
+#summary = df.groupby('session ID', as_index=False)['size of response'].sum()
+#summary = summary.reset_index()
+#result = summary.apply(lambda x: x.order(ascending=False))
+
+
 print(summary)
-summary = 'aggSessionID.xlsx'
-df.to_excel(summary, index=True,sheet_name='aggregate')
+
+'''
+xpoints = summary['session ID']
+ypoints = summary['size of response']
+plt.hist(summary, bins=1787)
+plt.show()
+'''
+res=summary.reset_index()
+plt.figure(figsize=(10,8))
+sns.barplot(x='session ID', y='size of response',data=res)
+plt.show()
+
+#summary = 'aggSessionID.xlsx'
+#df.to_excel(summary, index=True,sheet_name='aggregate')
+#plot.
+#xpoints=df('session ID')
+#ypoints =
+#plt.show()
 #print(df.iloc[1])
 #print(df.dtypes)
 
