@@ -1,5 +1,6 @@
 import pandas as pd
 import re
+import matplotlib.pyplot as plt
 
 logFilename = 'access1.csv'
 
@@ -17,7 +18,7 @@ def sessionId(x):
     newSessionCol= re.search('(?<=D=)(.*)(?= HTTP)',x).group()
     return newSessionCol
 # Making new column and populating it
-df['sessID'] = df['url'].apply(sessionId)
+df['session ID'] = df['url'].apply(sessionId)
 
 df['time'] = df['time'].apply(getNewValue)
 #chamge 'time' format
@@ -26,6 +27,12 @@ df['time']= pd.to_datetime(df['time'], format='%d/%b/%Y:%H:%M:%S')
 df = df.set_index(['time'])
 excelFilename = 'access.xlsx'
 df.to_excel(excelFilename, index=True, sheet_name='data')
-print(df.iloc[1])
+#summary = df['size of response'].sum()
+summary = df.groupby('session ID', as_index=False).agg({'size of response': 'sum'})
+print(summary)
+summary = 'aggSessionID.xlsx'
+df.to_excel(summary, index=True,sheet_name='aggregate')
+#print(df.iloc[1])
 #print(df.dtypes)
+
 
